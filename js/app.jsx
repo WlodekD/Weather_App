@@ -1,5 +1,2 @@
-$(function () {
-
-    console.log("działa");
-
-});
+import './getLocation.jsx';
+import './getWeather.jsx';
