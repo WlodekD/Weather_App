@@ -1,11 +1,10 @@
-let dataArr = [];
+const dataArr = [];
 
 $(function () {
 
     let latitude = 0;
     let longitude = 0;
 
-    // pozyskanie danych geolokayjcnych
     $(function getLocation() {
 
         if(navigator.geolocation){
@@ -21,7 +20,6 @@ $(function () {
         getAPI(latitude,longitude);
     }
 
-    // pobranie danych pogodowych z API dla konkretnej lokalizacji
     function getAPI(lat,long) {
         $.ajax({
             url: 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&APPID=65abbbf90e06e64ea43e8b0ebaa43bb0',
@@ -29,18 +27,35 @@ $(function () {
             method: 'GET'
         }).done(function (res) {
             // console.log(res);
-            exportsDataWeather(res);
+            collectWeatherData(res);
         }).fail(function () {
             console.log('something went wrong');
-        })
+        });
     }
 });
 
-// funkcja której jedyną rola to spuszować dane pogodowe do tablicy
-// żebym mógł je eksportować
-function exportsDataWeather(data){
-    //
-    dataArr.push(data);
+
+function collectWeatherData(data){
+
+    const dataObj = [
+        {
+            name: data.name
+        },
+        {
+            humidity: data.main.humidity,
+            pressure: data.main.pressure,
+            temp: data.main.temp
+        },
+        {
+            windDirection: data.wind.deg,
+            windSpeed: data.wind.speed
+        }
+    ];
+
+    console.log(dataObj);
+
 }
 
-module.exports = dataArr;
+
+// module.exports = dataObj;
+
