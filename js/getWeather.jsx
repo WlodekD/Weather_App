@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {getAPI} from './getLocation.jsx';
 
+
 $(function getLocation() {
 
     if(navigator.geolocation){
@@ -9,37 +10,60 @@ $(function getLocation() {
     }
 });
 
+
 function getPosition(position) {
 
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    getAPI(latitude,longitude, (data) => {
 
-        // tu mam dane
-        console.log(data);
+    class GetData extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                data: false,
+            };
+        }
 
-    })
-}
+        componentDidMount(){
+            getAPI(latitude,longitude, (data) => {
+                data.load().then(this.dataLoaded);
+            })
+        }
 
-// co mam zrobić żeby je mieć tutaj
+        dataLoaded = data => this.setState({data});
 
-class Title extends React.Component {
-    render(){
 
-        return <h1>
-            {/* // a najlepiej tutaj */}
-            title
-        </h1>
+        render(){
+            if(this.state.data === false){
+                return null;
+            }
+
+            const elements = this.state.data.map(el => {
+                return <div>
+                    <h1>{el.name}</h1>
+                    <div>
+                        <span>{el.main.temp}</span>
+                        <span>{el.main.pressure}</span>
+                        <span>{el.main.humidity}</span>
+                        <span>{el.main.sea_level}</span>
+                    </div>
+                </div>
+            });
+
+            return <div>
+                {elements}
+            </div>
+        }
     }
+
 }
 
 class App extends React.Component {
     render(){
-        return <Title />
+        return <GetData />
     }
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
     ReactDOM.render(
