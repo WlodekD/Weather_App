@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {getAPI} from './getLocation.jsx';
 
-class Test extends React.Component {
+class LocationNameComponent extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data : false
+            data : false,
+            tempC: 'inline',
+            tempF: 'none'
         }
     }
 
@@ -27,6 +29,20 @@ class Test extends React.Component {
         }
     };
 
+    showTempInC = () => {
+        this.setState({
+            tempC: 'inline',
+            tempF: 'none'
+        });
+    };
+
+    showTempInF = () => {
+        this.setState({
+            tempC: 'none',
+            tempF: 'inline'
+        });
+    };
+
     render(){
         if(this.state.data === false){
             return null;
@@ -34,15 +50,32 @@ class Test extends React.Component {
 
         console.log(this.state.data);
 
-        return <div>
-                <h1>{this.state.data.name}</h1>
+        const locationName = this.state.data.name;
+
+        // in Celcius
+        const tempC = this.state.data.main.temp - 273.15;
+        const tempF = (this.state.data.main.temp - 273.15) * (9/5) + 32;
+        const weatherIcon = this.state.data.weather[0].icon;
+
+        return <div className='mainWrapper'>
+                <div className='locationBox'>
+                    <p className='locationName'>Your location: <span>{locationName}</span></p>
+                </div>
+                <div className='tempBox'>
+                    <div><img src={"http://openweathermap.org/img/w/"+weatherIcon+".png"} alt="weather icon"/></div>
+                    <p style={{display: this.state.tempC}}>{tempC}</p>
+                    <p style={{display: this.state.tempF}}>{tempF}</p>
+                    <a onClick={this.showTempInC} href="#">&deg;C</a>
+                    <a>|</a>
+                    <a onClick={this.showTempInF} href="#">&deg;F</a>
+                </div>
             </div>
     }
 }
 
 class App extends React.Component {
     render(){
-        return <Test />
+        return <LocationNameComponent />
     }
 }
 

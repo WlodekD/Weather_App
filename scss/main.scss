@@ -4,6 +4,49 @@
   box-sizing: border-box;
 }
 
-h1 {
-  color: purple;
+.mainWrapper {
+  width: 40vw;
+  height: 30vh;
+  border: 1px solid rebeccapurple;
+  margin: 0 auto;
+}
+
+.locationBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 10vh;
+  border: 1px solid red;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  span {
+    color: black;
+    font-weight: 700;
+  }
+}
+
+.locationName {
+  float: left;
+  font-size: 1rem;
+  color: rgb(169,169,169);
+}
+
+.tempBox {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  margin: 10% 10% 0 0;
+  div {
+    position: absolute;
+    left: 15%;
+  }
+  > a {
+    text-decoration: none;
+  }
+  > p {
+    font-size: 3rem;
+  }
 }
