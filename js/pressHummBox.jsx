@@ -1,12 +1,10 @@
 import React from 'react';
 import {getAPI} from './getLocation.jsx';
 
-
-class LocationBox extends React.Component{
+class PressHummBox extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            data : false,
         }
     }
 
@@ -17,9 +15,9 @@ class LocationBox extends React.Component{
                 getAPI(position.coords.latitude, position.coords.longitude, (data) => {
 
                     if(data !== false){
-
                         this.setState({
-                            data: data
+                            pressure: data.main.pressure,
+                            humidity: data.main.humidity
                         });
                     }
                 });
@@ -28,16 +26,18 @@ class LocationBox extends React.Component{
     };
 
     render(){
-        if(this.state.data === false){
-            return null;
-        }
 
-        const locationName = this.state.data.name;
-
-        return <div className='locationBox'>
-            <p className='locationName'>Twoja lokalizacja: <span>{locationName}</span></p>
+        return <div className='pressHummBox'>
+            <div className='pressure'>
+                <p>Pressure</p>
+                <p>{this.state.pressure} hPa</p>
+            </div>
+            <div className='humidity'>
+                <p>Humidity</p>
+                <p>{this.state.humidity}%</p>
+            </div>
         </div>
     }
 }
 
-export {LocationBox}
+export {PressHummBox}

@@ -1,15 +1,15 @@
 @import "weather-icons.min";
+@import "weather-icons-wind.min";
 
 * {
   margin: 0;
   padding: 0;
-  font-size: 1.2vw;
 }
 
 .mainWrapper {
   font-family: "Lato", "Helvetica", sans-serif;
   width: 30vw;
-  height: 60vh;
+  height: 100vh;
   border: 1px solid rebeccapurple;
   margin: 0 auto;
 }
@@ -106,3 +106,31 @@
     text-align: center;
   }
 }
+
+.pressHummBox {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.3rem;
+  border: 1px solid blue;
+}
+
+.windBox {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.3rem;
+  div p {
+    text-align: center;
+  }
+  div:nth-of-type(2) i {
+    font-size: 4rem;
+  }
+}
+
+
+
+@media screen and (max-width: 800px) {
+  * {
+    font-size: 1.2vw;
+  }
+}
+

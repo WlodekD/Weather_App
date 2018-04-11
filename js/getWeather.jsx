@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import {LocationBox} from './locationBox.jsx';
 import {TemperatureBox} from './temperatureBox.jsx';
 import {AirQualityInfo} from './airQualityInfo.jsx';
+import {PressHummBox} from './pressHummBox.jsx';
+import {WindBox} from './windBox.jsx';
+
 
 class MainWrapper extends React.Component {
 
@@ -11,6 +14,8 @@ class MainWrapper extends React.Component {
             <LocationBox />
             <TemperatureBox />
             <AirQualityInfo />
+            <PressHummBox />
+            <WindBox />
         </div>
     }
 }
