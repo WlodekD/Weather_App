@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-size: 1.2vw;
 }
 
 .mainWrapper {
@@ -68,5 +68,41 @@
   }
   i {
     font-size: 3rem;
+  }
+}
+
+.airQualityBox {
+  border: 1px solid green;
+  h1 {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+.airQualityInfo1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 5px;
+  div p {
+    font-size: 0.7rem;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.airQualityInfo2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 5px;
+  div p {
+    font-size: 0.7rem;
+    margin: 0;
+    text-align: center;
   }
 }

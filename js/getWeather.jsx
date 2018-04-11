@@ -10,7 +10,7 @@ class MainWrapper extends React.Component {
         return <div className='mainWrapper'>
             <LocationBox />
             <TemperatureBox />
-            {/*<AirQualityInfo />*/}
+            <AirQualityInfo />
         </div>
     }
 }
