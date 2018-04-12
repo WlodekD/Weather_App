@@ -1,6 +1,5 @@
 import React from 'react';
 import {getAPI} from './getLocation.jsx';
-import weatherIcons from './icons.json';
 
 class WindBox extends React.Component{
     constructor(props){
@@ -15,7 +14,6 @@ class WindBox extends React.Component{
             navigator.geolocation.getCurrentPosition(position => {
 
                 getAPI(position.coords.latitude, position.coords.longitude, (data) => {
-                    // console.log(data);
                     if(data !== false){
                         this.setState({
                             windSpeed: data.wind.speed,
@@ -45,15 +43,20 @@ class WindBox extends React.Component{
 
         return <div className='windBox'>
             <div>
-                <p>Prędkość wiatru:</p>
-                <p>{windSKm} km/h</p>
+                <p className='windSpeedDiv'>Prędkość wiatru:</p>
+                <div>
+                    <p>{windSKm} km/h</p>
+                </div>
             </div>
             <div>
-                <p>Kierunek wiatru:</p>
-                <p>{this.windDirFunc(windDeg)}</p>
                 <i className={windIcon}/>
             </div>
-
+            <div>
+                <p className='windDirDiv'>Kierunek wiatru:</p>
+                <div>
+                    <p>{this.windDirFunc(windDeg)}</p>
+                </div>
+            </div>
         </div>
     }
 }

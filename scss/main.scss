@@ -6,24 +6,31 @@
   padding: 0;
 }
 
+p {
+  margin-bottom: 0.5rem;
+}
+
+body {
+  background-color: lightgreen;
+}
+
 .mainWrapper {
   font-family: "Lato", "Helvetica", sans-serif;
   width: 30vw;
-  height: 100vh;
-  border: 1px solid rebeccapurple;
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
 }
 
 .locationBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 10vh;
-  border: 1px solid red;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
   color: black;
+  p {
+    padding: 2%;
+  }
   span {
     color: black;
     font-weight: 700;
@@ -42,17 +49,12 @@
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  height: 20vh;
-  border: 1px solid red;
+  padding-bottom: 1rem;
   div:nth-of-type(1) {
     left: 15%;
-    p {
-      margin: 0;
-    }
   }
   div:nth-of-type(2){
     display: flex;
-    width: 6rem;
     span {
       align-self: baseline;
     }
@@ -63,7 +65,6 @@
     div > p {
       font-size: 4rem;
       height: 3rem;
-      margin: 0;
     }
   }
   i {
@@ -72,10 +73,11 @@
 }
 
 .airQualityBox {
-  border: 1px solid green;
   h1 {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
     text-align: center;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -85,10 +87,8 @@
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin: 5px;
   div p {
-    font-size: 0.7rem;
-    margin: 0;
+    font-size: 0.8rem;
     text-align: center;
   }
 }
@@ -101,8 +101,7 @@
   width: 100%;
   margin: 5px;
   div p {
-    font-size: 0.7rem;
-    margin: 0;
+    font-size: 0.8rem;
     text-align: center;
   }
 }
@@ -110,27 +109,168 @@
 .pressHummBox {
   display: flex;
   justify-content: space-around;
-  margin-top: 1.3rem;
-  border: 1px solid blue;
+  margin-top: 0.7rem;
+  div p:first-of-type  {
+    color: rgb(169,169,169);
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
 }
 
 .windBox {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  margin-top: 1.3rem;
-  div p {
+  margin-top: 0.7rem;
+  div > p {
     text-align: center;
   }
-  div:nth-of-type(2) i {
-    font-size: 4rem;
+  div:nth-of-type(2) {
+    align-self: flex-end;
+    i {
+      font-size: 7rem;
+      color: rgb(196, 141, 155);
+    }
   }
 }
 
+.windSpeedDiv {
+  color: rgb(169,169,169);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
 
+.windDirDiv {
+  color: rgb(169,169,169);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+hr {
+  margin: 0;
+  height: 1rem;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+@media screen and (max-width: 1000px) {
+  * {
+    font-size: 1.6vw;
+  }
+
+  .mainWrapper {
+    width: 50vw;
+    height: 100vh;
+    background-color: rgb(204,239,255);
+  }
+}
 
 @media screen and (max-width: 800px) {
   * {
-    font-size: 1.2vw;
+    font-size: 2.5vw;
+  }
+
+  .mainWrapper {
+    width: 70vw;
+    height: 100vh;
+    background-color: rgb(204,239,255);
+  }
+
+  .windBox {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    div > p {
+      text-align: center;
+    }
+    div:nth-of-type(2) {
+      align-self: flex-start;
+      height: 0;
+      i {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .tempBox {
+    padding-bottom: 0;
+  }
+
+  .pressHummBox {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0;
+  }
+
+}
+
+@media screen and (max-width: 540px) {
+  * {
+    font-size: 3.5vw;
+  }
+
+  body {
+    background-color: transparent;
+  }
+
+  .mainWrapper {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    background-color: rgb(204,239,255);
+  }
+
+  .windBox {
+    display: flex;
+    flex-direction: row;
+    div > p {
+      text-align: center;
+    }
+    div:nth-of-type(2) {
+      align-self: flex-start;
+      height: 0;
+      i {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .pressHummBox {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+    p {
+      margin: 0;
+    }
+    div p:first-of-type  {
+      color: rgb(169,169,169);
+      font-weight: 700;
+    }
+  }
+
+  .tempBox {
+    div:nth-of-type(1) {
+      left: 15%;
+    }
+    div:nth-of-type(2){
+      display: flex;
+      span {
+        align-self: baseline;
+      }
+      span > a {
+        text-decoration: none;
+        height: 2rem;
+        font-size: 2.5rem;
+      }
+      div > p {
+        font-size: 4rem;
+        height: 3rem;
+      }
+    }
+    i {
+      font-size: 3rem;
+    }
   }
 }
 

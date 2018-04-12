@@ -61,6 +61,8 @@ class TemperatureBox extends React.Component{
         const code = this.state.data.weather[0].id;
         let icon = weatherIcons[code].icon;
 
+        console.log(code);
+
         if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
             icon = 'day-' + icon;
         }

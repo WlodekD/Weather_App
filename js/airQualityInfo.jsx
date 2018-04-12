@@ -6,6 +6,12 @@ class AirQualityInfo extends React.Component{
         this.state = {
             lat: 0,
             long: 0,
+            c6h6: '',
+            co: '',
+            no2: '',
+            pm10: '',
+            pm25: '',
+            airColor: 'black'
         }
     }
 
@@ -47,7 +53,7 @@ class AirQualityInfo extends React.Component{
                         co: data.coIndexLevel.indexLevelName,
                         no2: data.no2IndexLevel.indexLevelName,
                         pm10: data.pm10IndexLevel.indexLevelName,
-                        pm25: data.pm25IndexLevel.indexLevelName
+                        pm25: data.pm25IndexLevel.indexLevelName,
                     });
                 });
         };
@@ -60,9 +66,57 @@ class AirQualityInfo extends React.Component{
                 });
             });
         }
+
+
     }
 
     render(){
+
+        let airCol1 = '';
+        let airCol2 = '';
+        let airCol3 = '';
+        let airCol4 = '';
+        let airCol5 = '';
+
+        if(this.state.c6h6 === "Bardzo dobry" || this.state.c6h6 === "Dobry"){
+            airCol1 = 'green'
+        } else if(this.state.c6h6 === "Umiarkowany"){
+            airCol1 = 'orange'
+        } else {
+            airCol1 = 'red'
+        }
+
+        if(this.state.co === "Bardzo dobry" || this.state.co === "Dobry"){
+            airCol2 = 'green'
+        } else if(this.state.co === "Umiarkowany"){
+            airCol2 = 'orange'
+        } else {
+            airCol2 = 'red'
+        }
+
+        if(this.state.co === "Bardzo dobry" || this.state.co === "Dobry"){
+            airCol3 = 'green'
+        } else if(this.state.co === "Umiarkowany"){
+            airCol3 = 'orange'
+        } else {
+            airCol3 = 'red'
+        }
+
+        if(this.state.pm10 === "Bardzo dobry" || this.state.pm10 === "Dobry"){
+            airCol4 = 'green'
+        } else if(this.state.pm10 === "Umiarkowany"){
+            airCol4 = 'orange'
+        } else {
+            airCol4 = 'red'
+        }
+
+        if(this.state.pm25 === "Bardzo dobry" || this.state.pm25 === "Dobry"){
+            airCol5 = 'green'
+        } else if(this.state.pm25 === "Umiarkowany"){
+            airCol5 = 'orange'
+        } else {
+            airCol5 = 'red'
+        }
 
         if(this.state.c6h6 === false){
             return null;
@@ -72,29 +126,30 @@ class AirQualityInfo extends React.Component{
                 <div className='airQualityInfo1'>
                     <div className='chh6'>
                         <p>Wskaźnik benzenu</p>
-                        <p>{this.state.c6h6}</p>
+                        <p style={{fontWeight: '700', color: airCol1, fontSize: '1rem'}}>{this.state.c6h6}</p>
                     </div>
                     <div className='co'>
                         <p>Wskaźnik tlenku węgla</p>
-                        <p>{this.state.co}</p>
+                        <p style={{fontWeight: '700', color: airCol2, fontSize: '1rem'}}>{this.state.co}</p>
                     </div>
                     <div className='no2'>
                         <p>Wskaźnik dwutlenku azotu </p>
-                        <p>{this.state.no2}</p>
+                        <p style={{fontWeight: '700', color: airCol3, fontSize: '1rem'}}>{this.state.no2}</p>
                     </div>
                 </div>
                 <hr/>
                 <div className='airQualityInfo2'>
                     <div className='no2'>
                         <p>Wskaźnik pyłów zawieszonych pm10 </p>
-                        <p>{this.state.pm10}</p>
+                        <p style={{fontWeight: '700', color: airCol4, fontSize: '1rem'}}>{this.state.pm10}</p>
                     </div>
                     <div className='no2'>
                         <p>Wskaźnik pyłów zawieszonych pm2.5 </p>
-                        <p>{this.state.pm25}</p>
+                        <p style={{fontWeight: '700', color: airCol5, fontSize: '1rem'}}>{this.state.pm25}</p>
                     </div>
                 </div>
-                </div>
+                <hr/>
+            </div>
         }
     }
 }

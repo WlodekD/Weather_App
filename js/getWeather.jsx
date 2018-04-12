@@ -10,7 +10,7 @@ import {WindBox} from './windBox.jsx';
 class MainWrapper extends React.Component {
 
     render(){
-        return <div className='mainWrapper'>
+        return <div  className='mainWrapper'>
             <LocationBox />
             <TemperatureBox />
             <AirQualityInfo />
