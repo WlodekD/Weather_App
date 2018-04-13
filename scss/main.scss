@@ -10,10 +10,6 @@ p {
   margin-bottom: 0.5rem;
 }
 
-body {
-  background-color: lightgreen;
-}
-
 .mainWrapper {
   font-family: "Lato", "Helvetica", sans-serif;
   width: 30vw;
@@ -87,9 +83,13 @@ body {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  div p {
+  p a {
+    text-decoration: none;
+    color: black;
     font-size: 0.8rem;
-    text-align: center;
+  }
+  p a:hover{
+    opacity: 0.5;
   }
 }
 
@@ -100,9 +100,13 @@ body {
   flex-wrap: wrap;
   width: 100%;
   margin: 5px;
-  div p {
+  p a {
+    text-decoration: none;
+    color: black;
     font-size: 0.8rem;
-    text-align: center;
+  }
+  p a:hover{
+    opacity: 0.5;
   }
 }
 
@@ -162,7 +166,7 @@ hr {
   .mainWrapper {
     width: 50vw;
     height: 100vh;
-    background-color: rgb(204,239,255);
+    background-color: rgba(204,239,255,0.9);
   }
 }
 
@@ -174,7 +178,7 @@ hr {
   .mainWrapper {
     width: 70vw;
     height: 100vh;
-    background-color: rgb(204,239,255);
+    background-color: rgba(204,239,255,0.9);
   }
 
   .windBox {
@@ -218,7 +222,7 @@ hr {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
-    background-color: rgb(204,239,255);
+    background-color: rgba(204,239,255,0.9);
   }
 
   .windBox {

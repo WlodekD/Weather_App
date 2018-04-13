@@ -66,8 +66,6 @@ class AirQualityInfo extends React.Component{
                 });
             });
         }
-
-
     }
 
     render(){
@@ -125,26 +123,26 @@ class AirQualityInfo extends React.Component{
                 <h1>Index jakości powietrza</h1>
                 <div className='airQualityInfo1'>
                     <div className='chh6'>
-                        <p>Wskaźnik benzenu</p>
+                        <p><a href="http://www.chemiaibiznes.com.pl/aktualnosc/benzen-w-powietrzu-czy-jest-sie-czego-bac" target='_blank'>Wskaźnik benzenu</a></p>
                         <p style={{fontWeight: '700', color: airCol1, fontSize: '1rem'}}>{this.state.c6h6}</p>
                     </div>
                     <div className='co'>
-                        <p>Wskaźnik tlenku węgla</p>
+                        <p><a href="https://pl.wikipedia.org/wiki/Tlenek_w%C4%99gla" target='_blank'>Wskaźnik tlenku węgla</a></p>
                         <p style={{fontWeight: '700', color: airCol2, fontSize: '1rem'}}>{this.state.co}</p>
                     </div>
                     <div className='no2'>
-                        <p>Wskaźnik dwutlenku azotu </p>
+                        <p><a href="http://www.powietrze.podkarpackie.pl/index.php/item-85/ct-menu-item-87/ct-menu-item-89" target='_blank'>Wskaźnik dwutlenku azotu</a></p>
                         <p style={{fontWeight: '700', color: airCol3, fontSize: '1rem'}}>{this.state.no2}</p>
                     </div>
                 </div>
                 <hr/>
                 <div className='airQualityInfo2'>
                     <div className='no2'>
-                        <p>Wskaźnik pyłów zawieszonych pm10 </p>
+                        <p><a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pyłów zawieszonych pm10</a></p>
                         <p style={{fontWeight: '700', color: airCol4, fontSize: '1rem'}}>{this.state.pm10}</p>
                     </div>
                     <div className='no2'>
-                        <p>Wskaźnik pyłów zawieszonych pm2.5 </p>
+                        <p><a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pyłów zawieszonych pm2.5</a></p>
                         <p style={{fontWeight: '700', color: airCol5, fontSize: '1rem'}}>{this.state.pm25}</p>
                     </div>
                 </div>

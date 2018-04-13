@@ -27,7 +27,7 @@ class WindBox extends React.Component{
 
     render(){
 
-        const windSKm = this.state.windSpeed * 3.6;
+        const windSKm = (this.state.windSpeed * 3.6).toFixed(1);
         const windDeg = this.state.windDeg;
 
         this.windDirFunc = (num) => {
@@ -39,7 +39,6 @@ class WindBox extends React.Component{
         const prefix = 'wi wi-wind towards-';
         const code = windDeg+'deg';
         const windIcon = prefix+code;
-
 
         return <div className='windBox'>
             <div>
