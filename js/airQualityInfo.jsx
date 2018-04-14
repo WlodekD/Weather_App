@@ -76,86 +76,110 @@ class AirQualityInfo extends React.Component{
         let airCol4 = '';
         let airCol5 = '';
 
-        if(this.state.c6h6 === "Bardzo dobry"){
-            airCol1 = 'rgb(20,125,10)';
-        } else if(this.state.c6h6 === "Dobry"){
-            airCol1 = 'rgb(32,196,16)'
-        } else if(this.state.c6h6 === "Umiarkowany"){
-            airCol1 = 'rgb(237,196,14)'
-        } else if(this.state.c6h6 === 'Dostateczny'){
-            airCol1 = 'rgb(239,110,22)'
-        } else if(this.state.c6h6 === 'Zły'){
-            airCol1 = 'rgb(239,51,30)'
-        } else if(this.state.c6h6 === "Bardzo zły"){
-            airCol1 = 'rgb(140,30,17)'
-        } else {
-            airCol1 = 'black'
+        switch (this.state.c6h6) {
+            case "Bardzo dobry":
+                airCol1 = 'rgb(20,125,10)';
+                break;
+            case "Dobry":
+                airCol1 = 'rgb(32,196,16)';
+                break;
+            case "Umiarkowany":
+                airCol1 = 'rgb(237,196,14)';
+                break;
+            case "Dostateczny":
+                airCol1 = 'rgb(239,110,22)';
+                break;
+            case "Zły":
+                airCol1 = 'rgb(239,51,30)';
+                break;
+            case "Bardzo zły":
+                airCol1 = 'rgb(140,30,17)';
+                break;
         }
 
-        if(this.state.co === "Bardzo dobry"){
-            airCol2 = 'rgb(20,125,10)';
-        } else if(this.state.co === "Dobry"){
-            airCol2 = 'rgb(32,196,16)'
-        } else if(this.state.co === "Umiarkowany"){
-            airCol2 = 'rgb(237,196,14)'
-        } else if(this.state.co === 'Dostateczny'){
-            airCol2 = 'rgb(239,110,22)'
-        } else if(this.state.co === 'Zły'){
-            airCol2 = 'rgb(239,51,30)'
-        } else if(this.state.co === "Bardzo zły"){
-            airCol2 = 'rgb(140,30,17)'
-        } else {
-            airCol2 = 'black'
+        switch (this.state.co) {
+            case "Bardzo dobry":
+                airCol2 = 'rgb(20,125,10)';
+                break;
+            case "Dobry":
+                airCol2 = 'rgb(32,196,16)';
+                break;
+            case "Umiarkowany":
+                airCol2 = 'rgb(237,196,14)';
+                break;
+            case "Dostateczny":
+                airCol2 = 'rgb(239,110,22)';
+                break;
+            case "Zły":
+                airCol2 = 'rgb(239,51,30)';
+                break;
+            case "Bardzo zły":
+                airCol2 = 'rgb(140,30,17)';
+                break;
         }
 
-        if(this.state.pm10 === "Bardzo dobry"){
-            airCol3 = 'rgb(20,125,10)';
-        } else if(this.state.pm10 === "Dobry"){
-            airCol3 = 'rgb(32,196,16)'
-        } else if(this.state.pm10 === "Umiarkowany"){
-            airCol3 = 'rgb(237,196,14)'
-        } else if(this.state.pm10 === 'Dostateczny'){
-            airCol3 = 'rgb(239,110,22)'
-        } else if(this.state.pm10 === 'Zły'){
-            airCol3 = 'rgb(239,51,30)'
-        } else if(this.state.pm10 === "Bardzo zły"){
-            airCol3 = 'rgb(140,30,17)'
-        } else {
-            airCol3 = 'black'
+        switch (this.state.pm10) {
+            case "Bardzo dobry":
+                airCol3 = 'rgb(20,125,10)';
+                break;
+            case "Dobry":
+                airCol3 = 'rgb(32,196,16)';
+                break;
+            case "Umiarkowany":
+                airCol3 = 'rgb(237,196,14)';
+                break;
+            case "Dostateczny":
+                airCol3 = 'rgb(239,110,22)';
+                break;
+            case "Zły":
+                airCol3 = 'rgb(239,51,30)';
+                break;
+            case "Bardzo zły":
+                airCol3 = 'rgb(140,30,17)';
+                break;
         }
 
-        if(this.state.pm25 === "Bardzo dobry"){
-            airCol4 = 'rgb(20,125,10)';
-        } else if(this.state.pm25 === "Dobry"){
-            airCol4 = 'rgb(32,196,16)'
-        } else if(this.state.pm25 === "Umiarkowany"){
-            airCol4 = 'rgb(237,196,14)'
-        } else if(this.state.pm25 === 'Dostateczny'){
-            airCol4 = 'rgb(239,110,22)'
-        } else if(this.state.pm25 === 'Zły'){
-            airCol4 = 'rgb(239,51,30)'
-        } else if(this.state.pm25 === "Bardzo zły"){
-            airCol4 = 'rgb(140,30,17)'
-        } else {
-            airCol4 = 'black'
+        switch (this.state.pm25) {
+            case "Bardzo dobry":
+                airCol4 = 'rgb(20,125,10)';
+                break;
+            case "Dobry":
+                airCol4 = 'rgb(32,196,16)';
+                break;
+            case "Umiarkowany":
+                airCol4 = 'rgb(237,196,14)';
+                break;
+            case "Dostateczny":
+                airCol4 = 'rgb(239,110,22)';
+                break;
+            case "Zły":
+                airCol4 = 'rgb(239,51,30)';
+                break;
+            case "Bardzo zły":
+                airCol4 = 'rgb(140,30,17)';
         }
 
-        if(this.state.no2 === "Bardzo dobry"){
-            airCol5 = 'rgb(20,125,10)';
-        } else if(this.state.no2 === "Dobry"){
-            airCol5 = 'rgb(32,196,16)'
-        } else if(this.state.no2 === "Umiarkowany"){
-            airCol5 = 'rgb(237,196,14)'
-        } else if(this.state.no2 === 'Dostateczny'){
-            airCol5 = 'rgb(239,110,22)'
-        } else if(this.state.no2 === 'Zły'){
-            airCol5 = 'rgb(239,51,30)'
-        } else if(this.state.no2 === "Bardzo zły"){
-            airCol5 = 'rgb(140,30,17)'
-        } else {
-            airCol5 = 'black'
+        switch (this.state.no2) {
+            case "Bardzo dobry":
+                airCol5 = 'rgb(20,125,10)';
+                break;
+            case "Dobry":
+                airCol5 = 'rgb(32,196,16)';
+                break;
+            case "Umiarkowany":
+                airCol5 = 'rgb(237,196,14)';
+                break;
+            case "Dostateczny":
+                airCol5 = 'rgb(239,110,22)';
+                break;
+            case "Zły":
+                airCol5 = 'rgb(239,51,30)';
+                break;
+            case 'Bardzo zły':
+                airCol5 = 'rgb(140,30,17)';
+                break;
         }
-
+        
         if(this.state.c6h6 === false){
             return null;
         } else {
