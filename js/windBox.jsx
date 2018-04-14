@@ -37,8 +37,9 @@ class WindBox extends React.Component{
         };
 
         const prefix = 'wi wi-wind towards-';
-        const code = windDeg+'deg';
+        const code = windDeg+'-deg';
         const windIcon = prefix+code;
+        console.log(windIcon);
 
         return <div className='windBox'>
             <div>

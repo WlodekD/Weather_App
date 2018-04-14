@@ -76,44 +76,84 @@ class AirQualityInfo extends React.Component{
         let airCol4 = '';
         let airCol5 = '';
 
-        if(this.state.c6h6 === "Bardzo dobry" || this.state.c6h6 === "Dobry"){
-            airCol1 = 'green'
+        if(this.state.c6h6 === "Bardzo dobry"){
+            airCol1 = 'rgb(20,125,10)';
+        } else if(this.state.c6h6 === "Dobry"){
+            airCol1 = 'rgb(32,196,16)'
         } else if(this.state.c6h6 === "Umiarkowany"){
-            airCol1 = 'orange'
+            airCol1 = 'rgb(237,196,14)'
+        } else if(this.state.c6h6 === 'Dostateczny'){
+            airCol1 = 'rgb(239,110,22)'
+        } else if(this.state.c6h6 === 'Zły'){
+            airCol1 = 'rgb(239,51,30)'
+        } else if(this.state.c6h6 === "Bardzo zły"){
+            airCol1 = 'rgb(140,30,17)'
         } else {
-            airCol1 = 'red'
+            airCol1 = 'black'
         }
 
-        if(this.state.co === "Bardzo dobry" || this.state.co === "Dobry"){
-            airCol2 = 'green'
+        if(this.state.co === "Bardzo dobry"){
+            airCol2 = 'rgb(20,125,10)';
+        } else if(this.state.co === "Dobry"){
+            airCol2 = 'rgb(32,196,16)'
         } else if(this.state.co === "Umiarkowany"){
-            airCol2 = 'orange'
+            airCol2 = 'rgb(237,196,14)'
+        } else if(this.state.co === 'Dostateczny'){
+            airCol2 = 'rgb(239,110,22)'
+        } else if(this.state.co === 'Zły'){
+            airCol2 = 'rgb(239,51,30)'
+        } else if(this.state.co === "Bardzo zły"){
+            airCol2 = 'rgb(140,30,17)'
         } else {
-            airCol2 = 'red'
+            airCol2 = 'black'
         }
 
-        if(this.state.co === "Bardzo dobry" || this.state.co === "Dobry"){
-            airCol3 = 'green'
-        } else if(this.state.co === "Umiarkowany"){
-            airCol3 = 'orange'
-        } else {
-            airCol3 = 'red'
-        }
-
-        if(this.state.pm10 === "Bardzo dobry" || this.state.pm10 === "Dobry"){
-            airCol4 = 'green'
+        if(this.state.pm10 === "Bardzo dobry"){
+            airCol3 = 'rgb(20,125,10)';
+        } else if(this.state.pm10 === "Dobry"){
+            airCol3 = 'rgb(32,196,16)'
         } else if(this.state.pm10 === "Umiarkowany"){
-            airCol4 = 'orange'
+            airCol3 = 'rgb(237,196,14)'
+        } else if(this.state.pm10 === 'Dostateczny'){
+            airCol3 = 'rgb(239,110,22)'
+        } else if(this.state.pm10 === 'Zły'){
+            airCol3 = 'rgb(239,51,30)'
+        } else if(this.state.pm10 === "Bardzo zły"){
+            airCol3 = 'rgb(140,30,17)'
         } else {
-            airCol4 = 'red'
+            airCol3 = 'black'
         }
 
-        if(this.state.pm25 === "Bardzo dobry" || this.state.pm25 === "Dobry"){
-            airCol5 = 'green'
+        if(this.state.pm25 === "Bardzo dobry"){
+            airCol4 = 'rgb(20,125,10)';
+        } else if(this.state.pm25 === "Dobry"){
+            airCol4 = 'rgb(32,196,16)'
         } else if(this.state.pm25 === "Umiarkowany"){
-            airCol5 = 'orange'
+            airCol4 = 'rgb(237,196,14)'
+        } else if(this.state.pm25 === 'Dostateczny'){
+            airCol4 = 'rgb(239,110,22)'
+        } else if(this.state.pm25 === 'Zły'){
+            airCol4 = 'rgb(239,51,30)'
+        } else if(this.state.pm25 === "Bardzo zły"){
+            airCol4 = 'rgb(140,30,17)'
         } else {
-            airCol5 = 'red'
+            airCol4 = 'black'
+        }
+
+        if(this.state.no2 === "Bardzo dobry"){
+            airCol5 = 'rgb(20,125,10)';
+        } else if(this.state.no2 === "Dobry"){
+            airCol5 = 'rgb(32,196,16)'
+        } else if(this.state.no2 === "Umiarkowany"){
+            airCol5 = 'rgb(237,196,14)'
+        } else if(this.state.no2 === 'Dostateczny'){
+            airCol5 = 'rgb(239,110,22)'
+        } else if(this.state.no2 === 'Zły'){
+            airCol5 = 'rgb(239,51,30)'
+        } else if(this.state.no2 === "Bardzo zły"){
+            airCol5 = 'rgb(140,30,17)'
+        } else {
+            airCol5 = 'black'
         }
 
         if(this.state.c6h6 === false){
@@ -132,18 +172,18 @@ class AirQualityInfo extends React.Component{
                     </div>
                     <div className='no2'>
                         <p><a href="http://www.powietrze.podkarpackie.pl/index.php/item-85/ct-menu-item-87/ct-menu-item-89" target='_blank'>Wskaźnik dwutlenku azotu</a></p>
-                        <p style={{fontWeight: '700', color: airCol3, fontSize: '1rem'}}>{this.state.no2}</p>
+                        <p style={{fontWeight: '700', color: airCol5, fontSize: '1rem'}}>{this.state.no2}</p>
                     </div>
                 </div>
                 <hr/>
                 <div className='airQualityInfo2'>
                     <div className='no2'>
                         <p><a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pyłów zawieszonych pm10</a></p>
-                        <p style={{fontWeight: '700', color: airCol4, fontSize: '1rem'}}>{this.state.pm10}</p>
+                        <p style={{fontWeight: '700', color: airCol3, fontSize: '1rem'}}>{this.state.pm10}</p>
                     </div>
                     <div className='no2'>
                         <p><a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pyłów zawieszonych pm2.5</a></p>
-                        <p style={{fontWeight: '700', color: airCol5, fontSize: '1rem'}}>{this.state.pm25}</p>
+                        <p style={{fontWeight: '700', color: airCol4, fontSize: '1rem'}}>{this.state.pm25}</p>
                     </div>
                 </div>
                 <hr/>
