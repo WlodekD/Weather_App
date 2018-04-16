@@ -11,7 +11,8 @@ class AirQualityInfo extends React.Component{
             no2: '',
             pm10: '',
             pm25: '',
-            airColor: 'black'
+            airColor: 'black',
+            airInfo: 'none'
         }
     }
 
@@ -66,7 +67,12 @@ class AirQualityInfo extends React.Component{
                 });
             });
         }
+
+        this.clickAction = (e) => {
+            console.log('click');
+        }
     }
+
 
     render(){
 
@@ -179,38 +185,46 @@ class AirQualityInfo extends React.Component{
                 airCol5 = 'rgb(140,30,17)';
                 break;
         }
-        
+
         if(this.state.c6h6 === false){
             return null;
         } else {
             return <div className='airQualityBox'>
-                <h1>Index jakości powietrza</h1>
-                <div className='airQualityInfo1'>
-                    <div className='chh6'>
-                        <p><a href="http://www.chemiaibiznes.com.pl/aktualnosc/benzen-w-powietrzu-czy-jest-sie-czego-bac" target='_blank'>Wskaźnik benzenu</a></p>
+                <hr className='hrStyle1'/>
+                <div>
+                    <h1>Index jakości powietrza</h1>
+                </div>
+                <div className='airQFlexBox'>
+                    <div onClick={this.clickAction} className='chh6'>
+                        {/*<a href="http://www.chemiaibiznes.com.pl/aktualnosc/benzen-w-powietrzu-czy-jest-sie-czego-bac" target='_blank'>Wskaźnik chh6</a>*/}
+                        <div style={{display: this.state.airInfo}}>
+                            <p>jakiś tak opis</p>
+                        </div>
+                        <p>Wskaźnik chh6</p>
                         <p style={{fontWeight: '700', color: airCol1, fontSize: '1rem'}}>{this.state.c6h6}</p>
                     </div>
                     <div className='co'>
-                        <p><a href="https://pl.wikipedia.org/wiki/Tlenek_w%C4%99gla" target='_blank'>Wskaźnik tlenku węgla</a></p>
+                        {/*<a href="https://pl.wikipedia.org/wiki/Tlenek_w%C4%99gla" target='_blank'>Wskaźnik co</a>*/}
+                        <p>Wskaźnik co</p>
                         <p style={{fontWeight: '700', color: airCol2, fontSize: '1rem'}}>{this.state.co}</p>
                     </div>
                     <div className='no2'>
-                        <p><a href="http://www.powietrze.podkarpackie.pl/index.php/item-85/ct-menu-item-87/ct-menu-item-89" target='_blank'>Wskaźnik dwutlenku azotu</a></p>
+                        {/*<a href="http://www.powietrze.podkarpackie.pl/index.php/item-85/ct-menu-item-87/ct-menu-item-89" target='_blank'>Wskaźnik no2</a>*/}
+                        <p>Wskaźnik no2</p>
                         <p style={{fontWeight: '700', color: airCol5, fontSize: '1rem'}}>{this.state.no2}</p>
                     </div>
-                </div>
-                <hr/>
-                <div className='airQualityInfo2'>
                     <div className='no2'>
-                        <p><a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pyłów zawieszonych pm10</a></p>
+                        {/*<a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pm10</a>*/}
+                        <p>Wskaźnik pm10</p>
                         <p style={{fontWeight: '700', color: airCol3, fontSize: '1rem'}}>{this.state.pm10}</p>
                     </div>
                     <div className='no2'>
-                        <p><a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pyłów zawieszonych pm2.5</a></p>
+                        {/*<a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>Wskaźnik pm2.5</a>*/}
+                        <p>Wskaźnik pm2.5</p>
                         <p style={{fontWeight: '700', color: airCol4, fontSize: '1rem'}}>{this.state.pm25}</p>
                     </div>
                 </div>
-                <hr/>
+                <hr className='hrStyle1'/>
             </div>
         }
     }

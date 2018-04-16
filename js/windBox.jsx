@@ -5,7 +5,7 @@ class WindBox extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-
+            windSpeed: 0
         }
     }
 
@@ -36,28 +36,20 @@ class WindBox extends React.Component{
             return windDir[(val % 16)];
         };
 
-        const prefix = 'wi wi-wind towards-';
-        const code = windDeg+'-deg';
-        const windIcon = prefix+code;
-        console.log(windIcon);
-
-        return <div className='windBox'>
-            <div>
-                <p className='windSpeedDiv'>Prędkość wiatru:</p>
-                <div>
-                    <p>{windSKm} km/h</p>
+        return <div className='windBoxWrapper'>
+                <div className='windSpeedDiv'>
+                    <p className='windSpeed'>Prędkość wiatru:</p>
+                    <div>
+                        <p>{windSKm} km/h</p>
+                    </div>
+                </div>
+                <div className='windDirDiv'>
+                    <p className='windDir'>Kierunek wiatru:</p>
+                    <div>
+                        <p>{this.windDirFunc(windDeg)}</p>
+                    </div>
                 </div>
             </div>
-            <div>
-                <i className={windIcon}/>
-            </div>
-            <div>
-                <p className='windDirDiv'>Kierunek wiatru:</p>
-                <div>
-                    <p>{this.windDirFunc(windDeg)}</p>
-                </div>
-            </div>
-        </div>
     }
 }
 

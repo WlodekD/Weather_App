@@ -35,7 +35,14 @@ class LocationBox extends React.Component{
         const locationName = this.state.data.name;
 
         return <div className='locationBox'>
-            <p className='locationName'>Twoja lokalizacja: <span>{locationName}</span></p>
+            <div className='borderDiv'>
+                <div>
+                    <p className='locationName'>Twoja lokalizacja:</p>
+                </div>
+                <div>
+                    <span>{locationName}</span>
+                </div>
+            </div>
         </div>
     }
 }

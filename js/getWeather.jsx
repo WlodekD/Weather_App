@@ -8,7 +8,9 @@ import {WindBox} from './windBox.jsx';
 import {getAPI} from './getLocation.jsx';
 
 class MainWrapper extends React.Component {
+
     render(){
+
         return <div className='mainWrapper'>
             <LocationBox />
             <TemperatureBox />
@@ -46,7 +48,6 @@ class App extends React.Component {
 
         this.backgroundImg = () => {
         }
-
     };
 
     render(){
@@ -78,14 +79,13 @@ class App extends React.Component {
 
         const style = {
             backgroundImage: "url('./images/"+weatherImg+".jpg')",
-            minHeight: "100vh",
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
         };
 
         return <div style={style}>
-            <MainWrapper/>
-        </div>
+                <MainWrapper />
+            </div>
     }
 }
 
