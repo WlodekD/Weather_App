@@ -35,7 +35,7 @@ class App extends React.Component {
             navigator.geolocation.getCurrentPosition(position => {
 
                 getAPI(position.coords.latitude, position.coords.longitude, (data) => {
-                    console.log(data);
+                    // console.log(data);
                     if(data !== false){
                         this.setState({
                             data: data.weather[0].id,
