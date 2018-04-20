@@ -14,9 +14,20 @@ class AirQualityInfo extends React.Component{
             pm25: '',
             airColor: 'black',
 
-            divInfo: 'none',
-            hideDiv: 'flex',
+            divInfo1: 'none',
+            hideDiv1: 'flex',
 
+            divInfo2: 'none',
+            hideDiv2: 'flex',
+
+            divInfo3: 'none',
+            hideDiv3: 'flex',
+
+            divInfo4: 'none',
+            hideDiv4: 'flex',
+
+            divInfo5: 'none',
+            hideDiv5: 'flex',
         };
 
     }
@@ -71,7 +82,7 @@ class AirQualityInfo extends React.Component{
                         })
                     } else {
                         this.setState({
-                            c6h6: "Brak informacji z punktu pomiaru"
+                            c6h6: "Brak danych z punktu pomiaru"
                         })
                     }
 
@@ -81,7 +92,7 @@ class AirQualityInfo extends React.Component{
                         })
                     } else {
                         this.setState({
-                            co: "Brak informacji z punktu pomiaru"
+                            co: "Brak danych z punktu pomiaru"
                         })
                     }
 
@@ -91,7 +102,7 @@ class AirQualityInfo extends React.Component{
                         })
                     } else {
                         this.setState({
-                            no2: "Brak informacji z punktu pomiaru"
+                            no2: "Brak danych z punktu pomiaru"
                         })
                     }
 
@@ -101,7 +112,7 @@ class AirQualityInfo extends React.Component{
                         })
                     } else {
                         this.setState({
-                            pm10: "Brak informacji z punktu pomiaru"
+                            pm10: "Brak danych z punktu pomiaru"
                         })
                     }
 
@@ -126,22 +137,135 @@ class AirQualityInfo extends React.Component{
             });
         }
 
-        this.clickAction1 = (e) => {
+        this.showInfo1 = (e) => {
 
             this.setState({
-                divInfo: "flex",
-                hideDiv: 'none',
+                divInfo1: 'flex',
+                hideDiv1: 'none',
+
+                hideDiv2: 'none',
+                hideDiv3: 'none',
+                hideDiv4: 'none',
+                hideDiv5: 'none'
             });
         };
 
-        this.clickAction2 = (e) => {
+        this.hideInfo1 = (e) => {
 
             this.setState({
-                divInfo: "none",
-                hideDiv: 'flex',
+                divInfo1: 'none',
+                hideDiv1: 'flex',
+
+                hideDiv2: 'flex',
+                hideDiv3: 'flex',
+                hideDiv4: 'flex',
+                hideDiv5: 'flex'
             });
         };
 
+        this.showInfo2 = (e) => {
+
+            this.setState({
+                divInfo2: "flex",
+                hideDiv2: 'none',
+
+                hideDiv1: 'none',
+                hideDiv3: 'none',
+                hideDiv4: 'none',
+                hideDiv5: 'none'
+            });
+        };
+
+        this.hideInfo2 = (e) => {
+
+            this.setState({
+                divInfo2: "none",
+                hideDiv2: 'flex',
+
+                hideDiv1: 'flex',
+                hideDiv3: 'flex',
+                hideDiv4: 'flex',
+                hideDiv5: 'flex'
+            });
+        };
+
+        this.showInfo3 = (e) => {
+
+            this.setState({
+                divInfo3: "flex",
+                hideDiv3: 'none',
+
+                hideDiv1: 'none',
+                hideDiv2: 'none',
+                hideDiv4: 'none',
+                hideDiv5: 'none'
+            });
+        };
+
+        this.hideInfo3 = (e) => {
+
+            this.setState({
+                divInfo3: "none",
+                hideDiv3: 'flex',
+
+                hideDiv1: 'flex',
+                hideDiv2: 'flex',
+                hideDiv4: 'flex',
+                hideDiv5: 'flex'
+            });
+        };
+
+        this.showInfo4 = (e) => {
+
+            this.setState({
+                divInfo4: "flex",
+                hideDiv4: 'none',
+
+                hideDiv1: 'none',
+                hideDiv2: 'none',
+                hideDiv3: 'none',
+                hideDiv5: 'none'
+            });
+        };
+
+        this.hideInfo4 = (e) => {
+
+            this.setState({
+                divInfo4: "none",
+                hideDiv4: 'flex',
+
+                hideDiv1: 'flex',
+                hideDiv2: 'flex',
+                hideDiv3: 'flex',
+                hideDiv5: 'flex'
+            });
+        };
+
+        this.showInfo5 = (e) => {
+
+            this.setState({
+                divInfo5: "flex",
+                hideDiv5: 'none',
+
+                hideDiv1: 'none',
+                hideDiv2: 'none',
+                hideDiv3: 'none',
+                hideDiv4: 'none'
+            });
+        };
+
+        this.hideInfo5 = (e) => {
+
+            this.setState({
+                divInfo5: "none",
+                hideDiv5: 'flex',
+
+                hideDiv1: 'flex',
+                hideDiv2: 'flex',
+                hideDiv3: 'flex',
+                hideDiv4: 'flex'
+            });
+        };
     }
 
     render(){
@@ -265,36 +389,81 @@ class AirQualityInfo extends React.Component{
             </div>
             <div className='airQFlexBox'>
 
-                <div onClick={this.clickAction2} style={{display: this.state.divInfo, width: '12rem', height: '10rem'}}>
-                    <p>jakiś tekst1</p>
+                <div onClick={this.hideInfo1} style={{display: this.state.divInfo1, width: '14rem', height: '14rem'}}>
+                    <p className='infoDivParagraph'>
+                        <strong>Benzen</strong> – uważany za bardzo toksyczny i rakotwórczy co potwierdzają liczne badania.
+                        Czy jest się czego bać? Odnotowywane największe stężenia benzenu w Polsce (22 µg/m3) są o ok 4 tyś.
+                        razy słabsze od dawek mogących być niebezpiecznymi dla naszego zdrowia (80 mg/m3). Czy kompletnie
+                        nie mamy czego się obawiać? Stężenia benzenu mogą być niebepieczne głównie w zamkniętych pomieszczeniach.
+                        Bądźmy jednak ostrożni i zgłaszajmy każdy wypadek bądź odchylenie od normy.<br/>
+                        <a href="http://www.chemiaibiznes.com.pl/aktualnosc/benzen-w-powietrzu-czy-jest-sie-czego-bac" target='_blank'>źródło</a>
+                    </p>
                 </div>
-                <div onClick={this.clickAction1} style={{display: this.state.hideDiv}}>
+                <div className='divInfo' onClick={this.showInfo1} style={{display: this.state.hideDiv1}}>
                     <p>Wskaźnik chh6</p>
-                    <p style={{fontWeight: '700', color: airCol1, fontSize: '1rem'}}>{this.state.c6h6}</p>
+                    <p style={{fontWeight: '700', color: airCol1, fontSize: '.9rem'}}>{this.state.c6h6}</p>
                 </div>
 
 
-                <div onClick={this.clickAction2} style={{display: this.state.divInfo, width: '12rem', height: '10rem'}}>
-                    <p>jakiś tekst 2</p>
+                <div onClick={this.hideInfo2} style={{display: this.state.divInfo2, width: '14rem', height: '14rem'}}>
+                    <p className='infoDivParagraph'>
+                        <strong>Tlenek węgla</strong> – jego toksyczność wynika z większego od tlenu (250–300 razy) powinowactwa
+                        do hemoglobiny. Tworzy on połączenie zwane karboksyhemoglobiną, które jest trwalsze niż służąca do
+                        transportu tlenu z płuc do tkanek oksyhemoglobina (połączenie tlenu z hemoglobiną).
+                        Prowadzi to do niedotlenienia i może skutkować śmiercą. Może mieć pochodzenie naturalne (erupcje wulkanów,
+                        naturalne pożary), ale jego głównymi źródłami są wysokotemperaturowe procesy technologiczne, w których paliwem
+                        jest głównie węgiel i ropa naftowa. <br/>
+                        <a href="https://pl.wikipedia.org/wiki/Tlenek_w%C4%99gla" target='_blank'>źródło</a>
+                    </p>
                 </div>
-                <div onClick={this.clickAction1} style={{display: this.state.hideDiv}}>
+                <div className='divInfo' onClick={this.showInfo2} style={{display: this.state.hideDiv2}}>
                     <p>Wskaźnik co</p>
-                    <p style={{fontWeight: '700', color: airCol2, fontSize: '1rem'}}>{this.state.co}</p>
+                    <p style={{fontWeight: '700', color: airCol2, fontSize: '.9rem'}}>{this.state.co}</p>
                 </div>
 
-                <div>
+                <div onClick={this.hideInfo3} style={{display: this.state.divInfo3, width: '14rem', height: '14rem'}}>
+                    <p className='infoDivParagraph'>
+                        <strong>Dwutlenek azotu</strong> - brunatny, silnie toksyczny gaz o ostrym zapachu.
+                        Tlenki azotu są odopowiedialne nie tylko za powstawanie smogu w miastach ale również za powiększanie się dzury
+                        ozonowej. Głównymi źródłami emisji dwutlenku azotu są transport drogowy, energetyka zawodowa oraz lokalne systemy
+                        grzewcze. Dwutlenek azotu może powodować uczulenia, podrażniać płuca i powodować mniejszą odporność na infekcje
+                        dróg oddechowych (np. grypa), lub wręcz powodować zwiększoną przewlekłą zachorowalność układu oddechowego u dzieci. <br/>
+                        <a href="http://www.powietrze.podkarpackie.pl/index.php/item-85/ct-menu-item-87/ct-menu-item-89" target='_blank'>źródło</a>
+                    </p>
+                </div>
+                <div className='divInfo' onClick={this.showInfo3} style={{display: this.state.hideDiv3}}>
                     <p>Wskaźnik no2</p>
-                    <p style={{fontWeight: '700', color: airCol5, fontSize: '1rem'}}>{this.state.no2}</p>
+                    <p style={{fontWeight: '700', color: airCol5, fontSize: '.9rem'}}>{this.state.no2}</p>
                 </div>
 
-                <div>
+                <div onClick={this.hideInfo4} style={{display: this.state.divInfo4, width: '14rem', height: '14rem'}}>
+                    <p className='infoDivParagraph'>
+                        <strong>Pył PM10</strong> składa się z mieszaniny cząstek zawieszonych w powietrzu, będących mieszaniną substancji organicznych i
+                        nieorganicznych. Pył zawieszony może zawierać substancje toksyczne takie jak wielopierścieniowe węglowodory aromatyczne 
+                        (np. benzopireny), metale ciężkie oraz dioksyny i furany. Pył PM10 zawiera cząstki o średnicy mniejszej niż 10 mikrometrów, 
+                        które mogą docierać do górnych dróg oddechowych i płuc. Poziom dopuszczalny dla stężenia średniorocznego wynosi 40 µg/m3,
+                        a poziom alarmowy 200 µg/m3. <br/>
+                        <a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>źródło</a>
+                    </p>
+                </div>
+                <div className='divInfo' onClick={this.showInfo4} style={{display: this.state.hideDiv4}}>
                     <p>Wskaźnik pm10</p>
-                    <p style={{fontWeight: '700', color: airCol3, fontSize: '1rem'}}>{this.state.pm10}</p>
+                    <p style={{fontWeight: '700', color: airCol3, fontSize: '.9rem'}}>{this.state.pm10}</p>
                 </div>
 
-                <div>
+                <div onClick={this.hideInfo5} style={{display: this.state.divInfo5, width: '14rem', height: '14rem'}}>
+                    <p className='infoDivParagraph'>
+                        <strong>Pył PM2,5</strong> zawiera cząstki o średnicy mniejszej niż 2,5 mikrometra, które mogą docierać do górnych dróg oddechowych,
+                        płuc oraz przenikać do krwi. Docelowa wartość średnioroczna dla pyłu PM2,5 wynosi 25 µg/m3. Największą emisję pyłów powoduje spalanie
+                        węgla w starych i często źle wyregulowanych kotłach i piecach domowych. Emisja pyłów powodowana jest również przez przemysł, ale ze
+                        względu na wysokość emitorów oraz obowiązujące przepisy regulujące dopuszczalne wartości emisji, źródła te mają zwykle dużo mniejszy
+                        wpływ na jakość powietrza. <br/>
+                        <a href="http://sojp.wios.warszawa.pl/?page=pm" target='_blank'>źródło</a>
+                    </p>
+                </div>
+                <div className='divInfo' onClick={this.showInfo5} style={{display: this.state.hideDiv5}}>
                     <p>Wskaźnik pm2.5</p>
-                    <p style={{fontWeight: '700', color: airCol4, fontSize: '1rem'}}>{this.state.pm25}</p>
+                    <p style={{fontWeight: '700', color: airCol4, fontSize: '.9rem'}}>{this.state.pm25}</p>
                 </div>
 
             </div>

@@ -90,11 +90,28 @@
     text-align: center;
   }
   p {
-    display: flex;
-    justify-content: center;
-    font-size: 0.8rem;
-    padding: 0.5rem;
+    text-align: center;
+    margin-bottom: .5rem;
   }
+}
+
+.divInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  p:first-of-type {
+    margin-top: .7rem;
+    color: black;
+    font-size: .8rem;
+  }
+}
+
+.infoDivParagraph {
+  font-size: 0.65rem;
+  overflow-wrap: break-word;
+  margin: .7rem;
+  line-height: 0.9rem;
+  text-align: justify;
 }
 
 .airQFlexBox {
@@ -108,11 +125,6 @@
     width: 7rem;
     height: 5rem;
     margin: 0.2rem;
-    p:first-of-type {
-      padding-top: .8rem;
-      color: black;
-      font-size: 0.8rem;
-    }
   }
 }
 
