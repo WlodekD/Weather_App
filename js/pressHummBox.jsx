@@ -40,12 +40,12 @@ class PressHummBox extends React.Component{
             <div className='pressHummBoxDiv'>
                 <div>
                     <div className='pressure'>
-                        <p>Pressure</p>
+                        <p>Ciśnienie</p>
                         <p>{this.state.pressure} hPa</p>
                     </div>
                     <hr className='hrStyle2'/>
                     <div className='humidity'>
-                        <p>Humidity</p>
+                        <p>Wilgotność</p>
                         <p>{this.state.humidity}%</p>
                     </div>
                 </div>

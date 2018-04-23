@@ -45,7 +45,7 @@ class AirQualityInfo extends React.Component{
             const stationsArr = [];
 
             let minDist = Infinity;
-            let closestID;
+            let closestID = Number;
             data.forEach(el => {
                const {gegrLat, gegrLon, id} = el;
                const dist = (Math.abs(latU - gegrLat)) + (Math.abs(longU - gegrLon));
@@ -122,7 +122,7 @@ class AirQualityInfo extends React.Component{
                         })
                     }else {
                         this.setState({
-                           pm25:  "Brak informacji z punktu pomiaru"
+                           pm25:  "Brak danych z punktu pomiaru"
                         })
                     }
                 });
@@ -137,7 +137,7 @@ class AirQualityInfo extends React.Component{
             });
         }
 
-        this.showInfo1 = (e) => {
+        this.showInfo1 = () => {
 
             this.setState({
                 divInfo1: 'flex',
@@ -150,7 +150,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.hideInfo1 = (e) => {
+        this.hideInfo1 = () => {
 
             this.setState({
                 divInfo1: 'none',
@@ -163,7 +163,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.showInfo2 = (e) => {
+        this.showInfo2 = () => {
 
             this.setState({
                 divInfo2: "flex",
@@ -176,7 +176,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.hideInfo2 = (e) => {
+        this.hideInfo2 = () => {
 
             this.setState({
                 divInfo2: "none",
@@ -189,7 +189,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.showInfo3 = (e) => {
+        this.showInfo3 = () => {
 
             this.setState({
                 divInfo3: "flex",
@@ -202,7 +202,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.hideInfo3 = (e) => {
+        this.hideInfo3 = () => {
 
             this.setState({
                 divInfo3: "none",
@@ -215,7 +215,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.showInfo4 = (e) => {
+        this.showInfo4 = () => {
 
             this.setState({
                 divInfo4: "flex",
@@ -228,7 +228,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.hideInfo4 = (e) => {
+        this.hideInfo4 = () => {
 
             this.setState({
                 divInfo4: "none",
@@ -241,7 +241,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.showInfo5 = (e) => {
+        this.showInfo5 = () => {
 
             this.setState({
                 divInfo5: "flex",
@@ -254,7 +254,7 @@ class AirQualityInfo extends React.Component{
             });
         };
 
-        this.hideInfo5 = (e) => {
+        this.hideInfo5 = () => {
 
             this.setState({
                 divInfo5: "none",
@@ -424,10 +424,10 @@ class AirQualityInfo extends React.Component{
                 <div onClick={this.hideInfo3} style={{display: this.state.divInfo3, width: '14rem', height: '14rem'}}>
                     <p className='infoDivParagraph'>
                         <strong>Dwutlenek azotu</strong> - brunatny, silnie toksyczny gaz o ostrym zapachu.
-                        Tlenki azotu są odopowiedialne nie tylko za powstawanie smogu w miastach ale również za powiększanie się dzury
+                        Tlenki azotu są odopowiedialne nie tylko za powstawanie smogu ale również za powiększanie się dzury
                         ozonowej. Głównymi źródłami emisji dwutlenku azotu są transport drogowy, energetyka zawodowa oraz lokalne systemy
                         grzewcze. Dwutlenek azotu może powodować uczulenia, podrażniać płuca i powodować mniejszą odporność na infekcje
-                        dróg oddechowych (np. grypa), lub wręcz powodować zwiększoną przewlekłą zachorowalność układu oddechowego u dzieci. <br/>
+                        dróg oddechowych (np. grypa), a nawet powodować zwiększoną przewlekłą zachorowalność układu oddechowego u dzieci. <br/>
                         <a href="http://www.powietrze.podkarpackie.pl/index.php/item-85/ct-menu-item-87/ct-menu-item-89" target='_blank'>źródło</a>
                     </p>
                 </div>
