@@ -6,10 +6,40 @@
   padding: 0;
 }
 
+.permissionWrap {
+  position: relative;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/location.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.permissionDiv {
+  position: absolute;
+  top: 11rem;
+  left: 7.5rem;
+  width: 20rem;
+  height: 10rem;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 10px;
+  font-family: "Lato", "Helvetica", sans-serif;
+  p {
+    position: absolute;
+    top: 1.2rem;
+    text-align: center;
+    line-height: 1.5rem;
+    padding: 0 2rem 0 2rem;
+  }
+}
+
 #app {
   display: flex;
   justify-content: center;
-  background-color: rgba(121,181,255,.8);
+  background: #BE93C5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   max-width: 100%;
 }
 
@@ -119,15 +149,15 @@
 
 .airQFlexBox {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   > div {
     box-shadow: 0 0 1em grey;
     border-radius: 5px;
     text-align: center;
     width: 7rem;
     height: 5rem;
-    margin: 0.2rem;
+    margin: 0.1rem;
   }
 }
 
@@ -149,7 +179,7 @@
   div i {
     align-self: flex-start;
     font-size: 6rem;
-    color: rgba(232, 110, 12, .9);
+    color: rgba(67, 154, 255, .9);
     margin-right: 2rem;
   }
 }
@@ -186,7 +216,7 @@
 }
 
 .hrStyle1 {
-  margin: .5rem 0 .5rem 0;
+  margin: .6rem 0 .6rem 0;
   height: 1rem;
   border: 0;
   box-shadow: 0 10px 10px -10px #8c8b8b inset;

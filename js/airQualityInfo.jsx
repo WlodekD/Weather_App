@@ -4,8 +4,8 @@ class AirQualityInfo extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            lat: 0,
-            long: 0,
+            lat: this.props.lat,
+            long: this.props.lon,
             closestStationName: '',
             c6h6: '',
             co: '',
@@ -127,15 +127,6 @@ class AirQualityInfo extends React.Component{
                     }
                 });
         };
-
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(position => {
-                this.setState({
-                    lat: position.coords.latitude.toFixed(4),
-                    long: position.coords.longitude.toFixed(4)
-                });
-            });
-        }
 
         this.showInfo1 = () => {
 
