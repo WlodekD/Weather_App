@@ -93,7 +93,7 @@ class AgreementModule extends React.Component {
                     <div className='permissionDiv'>
                         <p>
                             Aplikacja którą masz przed sobą do poprawnego działania potrzebuje
-                            Twoich danych geolokacyjnych. Jeśli więc chcesz z niej skorzystać
+                            Twoich danych geolokacyjnych. <br/> Jeśli więc chcesz z niej skorzystać
                             zezwól na sprawdzenie Twojej lokacji.
                         </p>
                     </div>
